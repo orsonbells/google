@@ -14,11 +14,9 @@ def three_sum(nums: list[int]) -> list[list[int]]:
     nums.sort()
     n = len(nums)
 
-    seen_v = set()
     for i in range(n - 2):
-        if nums[i] in seen_v:
+        if i > 0 and nums[i - 1] == nums[i]:
             continue
-        seen_v.add(nums[i])
 
         j = i + 1
         k = n - 1
